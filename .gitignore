@@ -1,0 +1,8 @@
+# Private reference images: stills and other people's art, never published.
+/stargate atlantis images and photos for inspiration of vibe/
+
+# Rust
+/target/
+
+# Node
+node_modules/
