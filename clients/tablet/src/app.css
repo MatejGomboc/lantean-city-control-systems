@@ -1,0 +1,46 @@
+/*
+    The theme, defined once, so mods can re-theme (concept.md § The look).
+
+    Two visual languages: the Ancient systems in calm teal on navy, and everything Earth-built
+    in plain grey. Warm colours are for alarms only (ISA-101).
+*/
+
+:root {
+    /* Ancient */
+    --ground: #070b16;
+    --ancient-teal: #3fd0c9;
+    --ancient-teal-dim: #1f6f72;
+    --ancient-blue: #6f9fe0;
+    --text: #ece9f7;
+    --text-dim: #9aa3b8;
+    --glow: 0 0 6px color-mix(in srgb, var(--ancient-teal) 60%, transparent);
+
+    /* Earth-built */
+    --earth-panel: #2b2f36;
+    --earth-line: #8a9099;
+
+    /* Alarms only */
+    --alarm-high: #ff4d3d;
+    --alarm-medium: #ff9a2e;
+    --alarm-low: #f2d45c;
+
+    color-scheme: dark;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--ground);
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

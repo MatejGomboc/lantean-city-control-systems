@@ -1,0 +1,31 @@
+[workspace]
+resolver = "3"
+members = ["crates/lccs-city", "crates/lccs-server"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/MatejGomboc/lantean-city-control-systems"
+readme = "README.md"
+keywords = ["scada", "simulation", "modbus", "atlantis", "fan-project"]
+categories = ["simulation", "games"]
+authors = ["Matej Gomboc"]
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+cargo = { level = "warn", priority = -1 }
+# Allow multiple versions of transitive dependencies (we can't control these)
+multiple_crate_versions = "allow"

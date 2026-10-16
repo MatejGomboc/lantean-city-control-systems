@@ -2,7 +2,20 @@
 /stargate atlantis images and photos for inspiration of vibe/
 
 # Rust
-/target/
+target/
 
-# Node
+# Node and SvelteKit
 node_modules/
+.svelte-kit/
+/clients/*/build/
+
+# Local settings and scratch
+.claude/settings.local.json
+.claude/worktrees/
+.env.local
+nul
+.tmp/
+
+# Coverage artefacts
+lcov.info
+*.log

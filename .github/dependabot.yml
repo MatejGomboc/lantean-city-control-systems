@@ -1,0 +1,61 @@
+version: 2
+updates:
+    # GitHub Actions: a small, stable surface. One grouped weekly PR keeps
+    # them fresh without a drip of near-identical PRs. Security updates are
+    # raised as soon as an advisory lands, independently of this schedule.
+    - package-ecosystem: "github-actions"
+      directory: "/"
+      schedule:
+        interval: "weekly"
+        day: "saturday"
+        time: "00:00"
+        timezone: "Europe/Ljubljana"
+      groups:
+        github-actions:
+          patterns: ["*"]
+          update-types: ["major", "minor", "patch"]
+      labels: ["dependencies", "github_actions"]
+
+    # npm at the root: markdownlint-cli2 tooling only.
+    - package-ecosystem: "npm"
+      directory: "/"
+      schedule:
+        interval: "weekly"
+        day: "saturday"
+        time: "00:00"
+        timezone: "Europe/Ljubljana"
+      groups:
+        npm-tooling:
+          patterns: ["*"]
+          update-types: ["major", "minor", "patch"]
+      labels: ["dependencies", "javascript"]
+
+    # npm for the tablet client: Svelte, SvelteKit, Vite and their tooling.
+    - package-ecosystem: "npm"
+      directory: "/clients/tablet"
+      schedule:
+        interval: "weekly"
+        day: "saturday"
+        time: "00:00"
+        timezone: "Europe/Ljubljana"
+      groups:
+        npm-tablet:
+          patterns: ["*"]
+          update-types: ["major", "minor", "patch"]
+      labels: ["dependencies", "javascript"]
+
+    # Cargo: weekly and grouped, so one PR a week instead of a rebase
+    # cascade. Kept on Monday, away from the light PRs above, because a
+    # grouped crate bump is the one that occasionally needs real review.
+    - package-ecosystem: "cargo"
+      directory: "/"
+      schedule:
+        interval: "weekly"
+        day: "monday"
+        time: "00:00"
+        timezone: "Europe/Ljubljana"
+      open-pull-requests-limit: 5
+      groups:
+        cargo-dependencies:
+          patterns: ["*"]
+      labels: ["dependencies", "rust"]

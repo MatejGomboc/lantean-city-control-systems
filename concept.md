@@ -2,8 +2,8 @@
 
 *Reverse-Engineered.*
 
-A simulated control system (SCADA) for the city of Atlantis, from Stargate Atlantis. You run the
-city's systems from an operator's console: the ZPMs, the naquadah generators, the gate, the shield,
+A simulated control system (SCADA) for any Lantean city-ship, Atlantis first, from Stargate
+Atlantis. You run the city's systems from an operator's console: the ZPMs, the naquadah generators, the gate, the shield,
 the control chair and its drones, submerging, flight, hyperspace and the inertial dampers. It is
 built as a real industrial control system would be, so real SCADA software can connect to it.
 Open source, for Stargate fans to extend, and a way to learn Rust, Svelte, HTML, CSS,
@@ -28,6 +28,18 @@ going public added 2026-10-09; the name, the licence and the reverse-engineered 
 - **Canon first, tunable always.** Every number the show gives (38 minutes, three ZPM slots,
   the gene therapy's success rate) is the default. The show contradicts itself often, so every
   number lives in a data file that modders can change.
+- **Any Lantean city, Atlantis first.** The core knows nothing about Atlantis in particular: it
+  knows Lantean city design (ZPM slots, a grid of sections, the gate, the shield, the chair). A
+  city is a data package: its sections, its skyline, its systems and their numbers, its canon
+  sources. Atlantis is the reference city, shipped first and kept the most complete; the Asuran
+  copy of the city, or a city-ship of a modder's own, is another package beside it.
+- **No two cities alike.** Cities were built at different times, for different purposes, and
+  have aged differently, so a package can vary nearly everything: how many ZPM slots, which
+  systems exist at all (a city without a chair, or with a second gate room), the layout and
+  number of sections, how much has decayed, and the revision of the crystal protocol itself.
+  What the expedition learnt on Atlantis transfers only in part: an older city's consoles speak
+  an earlier revision, some addresses mean something else, and the dongle may need new firmware
+  before it links at all. Each new city is reverse-engineered again, with its own register map.
 - **Built for nerds, by design.** Nothing is dumbed down: real protocols, real alarm management,
   real cryptography, in-jokes unexplained. The depth is the point, as with Dwarf Fortress or
   Kerbal Space Program. Only the README's first five minutes, getting the city running, are
@@ -43,10 +55,14 @@ the running app see it too. Light in tone; it says what matters:
 
 > **Just for fun.** This is an unofficial, non-commercial fan project: a deeply nerdy way to
 > spend a weekend or two, and a way to learn programming (Rust, Svelte, web APIs). It is not
-> affiliated with, endorsed by or connected to MGM, Amazon or anyone behind *Stargate*, and it
-> makes no claim to anything Stargate-related. *Stargate* and all related names belong to their
-> owners. No footage, sound, logos or art from the show are used; everything here is original.
-> It is free and will never be sold.
+> affiliated with, endorsed by or connected to MGM, Amazon or anyone behind *Stargate*.
+>
+> **We claim no rights in Stargate.** *Stargate*, *Stargate Atlantis* and all related names,
+> characters, places, technologies and story elements are the property of their respective
+> owners, and we claim no copyright, trademark or any other right in them. They are referred to
+> here only as a non-commercial fan tribute. No footage, sound, logos, fonts or art from the show
+> are used; everything here is original. The project's GPL licence covers only its own
+> code and art, never anything Stargate-related. It is free and will never be sold.
 
 ## How canon maps onto real SCADA
 

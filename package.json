@@ -1,0 +1,18 @@
+{
+    "name": "lantean-city-control-systems",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Repository tooling for Lantean City Control Systems (the clients have their own package.json).",
+    "license": "GPL-3.0-or-later",
+    "scripts": {
+        "lint:md": "markdownlint-cli2 \"**/*.md\""
+    },
+    "devDependencies": {
+        "markdownlint-cli2": "^0.23.3"
+    },
+    "comment:overrides": "Force patched transitive deps of markdownlint-cli2 to clear audit advisories (dev tooling only, never shipped). braces has no fixed release; its DoS needs hostile glob patterns, and ours come only from our own config.",
+    "overrides": {
+        "katex": ">=0.18.2",
+        "smol-toml": ">=1.9.0"
+    }
+}

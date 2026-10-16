@@ -1,0 +1,15 @@
+[package]
+name = "lccs-city"
+description = "The simulation core of Lantean City Control Systems: the city's systems at a fixed time step"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
